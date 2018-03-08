@@ -2,13 +2,13 @@
 
 export type Value = boolean | number | string | $ReadOnlyArray<Array<Value>> | $ReadOnly<{[key: string]: Value}>;
 
-export type cloudable<T: Value, R: Value> = (T | Promise<T>) => (R | Promise<R>);
+export type cloudable<T: Value, R: Value> = T => (R | Promise<R>);
 
 export type clouded<T: Value, R: Value> = (T | Promise<T>) => (Promise<R>);
 
 export type cloudy<T: Value, R: Value> = (fun: cloudable<T, R>) => clouded<T, R>;
 
-function nopeCloudy<T: Value, R: Value>(fun: cloudable<T, R>): clouded<T, R> {
+function mockCloudy<T: Value, R: Value>(fun: cloudable<T, R>): clouded<T, R> {
     return async (arg) => await fun(await arg);
 }
 
