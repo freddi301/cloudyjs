@@ -1,7 +1,22 @@
 {
+  "private": true,
+  "scripts": {
+    "dev": "serverless offline start",
+    "test": "jest"
+  },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.66.0",
+    "flow-typed": "^2.3.0",
+    "jest": "^22.4.2",
     "serverless": "^1.26.1",
     "serverless-offline": "^3.18.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.1"
   }
 }

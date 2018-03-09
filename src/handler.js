@@ -1,9 +1,8 @@
-'use strict';
+import { postRepos } from './post';
 
-module.exports.eval = (event, context, callback) => {
+export const eval = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
-    body: JSON.stringify(eval(event.body)),
+    body: JSON.stringify(postRepos.get(/*TODO*/)(event.body)),
   });
-
 };

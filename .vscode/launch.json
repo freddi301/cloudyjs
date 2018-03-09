@@ -8,9 +8,24 @@
       "type": "node",
       "request": "launch",
       "name": "debug offline",
-      "runtimeExecutable": "node",
+      "runtimeExecutable": "babel-node",
       "runtimeArgs": ["--inspect-brk", "node_modules/.bin/serverless", "offline", "start"],
       "port": 9229
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+      "args": [
+          "-i"
+      ],
+      "preLaunchTask": "build",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outFiles": [
+          "${workspaceRoot}/dist/**/*"
+      ],
+      "envFile": "${workspaceRoot}/.env"
+  }
   ]
 }
