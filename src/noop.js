@@ -1,6 +1,7 @@
 // @flow
 
-import type { Value, Cloudy } from './';
+import type { Cloudy, Cloudify } from './';
 
-export const noop = <T: Value, R: Value>(): Cloudy<void, T, R> => (conf, fun) => async arg =>
-  fun(arg instanceof Promise ? await arg : arg);
+export default function noop<T: Cloudy>(): Cloudify<T> {
+  return app => app;
+}
