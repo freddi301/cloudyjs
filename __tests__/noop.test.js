@@ -1,7 +1,7 @@
 // @flow
 
 import noop from "../src/noop";
-import TestApp from "./testApp.js";
+import TestApp from "../src/testApp.js";
 
 test("noop dict", async () => {
   const cloud = noop()(new TestApp)

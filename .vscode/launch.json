@@ -7,15 +7,15 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "debug offline",
-      "runtimeExecutable": "babel-node",
+      "name": "serverless-offline",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
       "runtimeArgs": ["--inspect-brk", "node_modules/.bin/serverless", "offline", "start"],
       "port": 9229
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Jest Tests",
+      "name": "jest",
       "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "args": [
           "-i"

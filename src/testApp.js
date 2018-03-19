@@ -10,7 +10,3 @@ export default class TestApp {
     return Promise.all(items.map(this.simpleJob));
   }
 }
-
-test("common test class instantiation", () => {
-    new TestApp;
-})
