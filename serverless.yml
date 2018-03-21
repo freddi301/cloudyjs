@@ -65,6 +65,7 @@ provider:
 functions:
   work:
     handler: src/serverless.work
+    handler: dist/serverless.work
     events:
       - http:
           path: work

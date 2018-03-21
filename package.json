@@ -1,8 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "serverless offline start",
+    "dev:serverless": "babel-node node_modules/.bin/serverless offline start",
+    "deploy:serverless": "yarn build && serverless deploy -v",
+    "build": "babel src --out-dir dist --source-maps",
     "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -12,7 +17,6 @@
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
     "express": "^4.16.3",
-    "axios": "^0.18.0",
     "flow-bin": "^0.66.0",
     "flow-typed": "^2.3.0",
     "jest": "^22.4.2",
